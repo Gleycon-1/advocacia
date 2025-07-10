@@ -1,0 +1,498 @@
+/* =============================================
+   RESET E BASE
+   ============================================= */
+
+/* Reset de variáveis e box model */
+*, :before, :after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+}
+
+:before, :after {
+  --tw-content: "";
+}
+
+/* =============================================
+   TIPOGRAFIA BASE
+   ============================================= */
+
+html, :host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  font-family: Inter, sans-serif;
+  font-feature-settings: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+  background-color: #001a33; /* Azul escuro base */
+  color: #ffffff;
+}
+
+/* Elementos de texto */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fbbf24; /* Âmbar */
+}
+
+/* =============================================
+   LAYOUT E ESTRUTURA
+   ============================================= */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Sistema de grid */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Espaçamentos */
+.p-4 {
+  padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+/* =============================================
+   COMPONENTES DO HEADER
+   ============================================= */
+
+.header {
+  background-color: rgba(15, 23, 42, 0.95); /* Azul escuro semi-transparente */
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Menu hamburguer */
+.menu-toggle {
+  display: none; /* Visível apenas em mobile */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fbbf24;
+}
+
+/* =============================================
+   SEÇÃO HERO (PRINCIPAL)
+   ============================================= */
+
+.hero {
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.hero-content {
+  max-width: 48rem;
+}
+
+.hero-title {
+  font-size: 3.75rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+}
+
+/* =============================================
+   SEÇÃO SOBRE O ADVOGADO
+   ============================================= */
+
+.about {
+  background-color: #0f172a;
+  padding: 5rem 0;
+}
+
+.about-content {
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-image {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* =============================================
+   SEÇÃO DE ESPECIALIDADES
+   ============================================= */
+
+.specialties {
+  background-color: #1e293b;
+  padding: 5rem 0;
+}
+
+.specialty-card {
+  background-color: #0f172a;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* =============================================
+   SEÇÃO DO ESCRITÓRIO
+   ============================================= */
+
+.office {
+  padding: 5rem 0;
+  background: linear-gradient(to top, #0f172a, #1e293b);
+}
+
+.office-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.office-image {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.office-image:hover {
+  transform: scale(1.05);
+}
+
+/* =============================================
+   FORMULÁRIO DE CONTATO
+   ============================================= */
+
+.contact-form {
+  background-color: #0f172a;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.25rem;
+  color: #ffffff;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #f59e0b;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.footer {
+  background-color: #0f172a;
+  padding: 3rem 0;
+}
+
+.footer-content {
+  display: grid;
+  gap: 3rem;
+}
+
+.map-container {
+  height: 300px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+}
+
+/* =============================================
+   COMPONENTES REUTILIZÁVEIS
+   ============================================= */
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #f59e0b; /* Âmbar */
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background-color: #fbbf24;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background-color: #22c55e; /* Verde */
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #16a34a;
+}
+
+/* Ícones */
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+/* Card */
+.card {
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   ELEMENTOS FIXOS
+   ============================================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #22c55e;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 40;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #16a34a;
+}
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #0f172a;
+    flex-direction: column;
+    padding: 2rem;
+    transition: right 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .office-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =============================================
+   UTILITÁRIOS
+   ============================================= */
+
+.text-center {
+  text-align: center;
+}
+
+.text-amber {
+  color: #f59e0b;
+}
+
+.bg-dark-blue {
+  background-color: #0f172a;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   ANIMAÇÕES
+   ============================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
